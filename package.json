@@ -1,0 +1,51 @@
+{
+  "name": "empty-directories",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple Node.js application to scan and log all the empty directories from a given pathand log them into a TXT file.",
+  "keywords": [
+    "scan",
+    "paths",
+    "files",
+    "directories"
+  ],
+  "license": "UNLICENSED",
+  "author": "Or Assayag <orassayag@gmail.com>",
+  "contributors": [
+    {
+      "name": "Or Assayag",
+      "email": "orassayag@gmail.com",
+      "url": "https://github.com/orassayag"
+    }
+  ],
+  "main": "src/scripts/scan.script.js",
+  "files": [
+    "src",
+    ".eslintignore",
+    ".eslintrc",
+    ".gitignore",
+    ".jsbeautifyrc",
+    ".npmignore",
+    "INSTRUCTIONS.md",
+    "package-lock.json",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "backup": "node src/scripts/backup.script.js",
+    "sand": "node src/tests/sandbox.test.js",
+    "start": "node src/scripts/scan.script.js",
+    "stop": "taskkill -f -im node.exe"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.24.0",
+    "fs-extra": "^9.1.0"
+  }
+}

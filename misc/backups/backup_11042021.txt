@@ -1,0 +1,262 @@
+/*         console.log(paths); */
+
+/* const { Color } = require('../../core/enums');
+const logUpdate = require('../../log-update');
+const colorUtils = require('./color.utils');
+const validationUtils = require('./validation.utils'); */
+
+/*
+
+    logColor(message, color) {
+        return colorUtils.createColorMessage({
+            message: message,
+            color: color
+        });
+    }
+
+    logProgress(data) {
+        const { titlesList, colorsTitlesList, keysLists, colorsLists, nonNumericKeys, statusColor } = data;
+        let results = '';
+        for (let i = 0, lengthX = keysLists.length; i < lengthX; i++) {
+            let result = '';
+            // Group title.
+            const title = `[${titlesList[i]}] `;
+            const keyTitle = colorUtils.createColorMessage({
+                message: title,
+                color: colorsTitlesList[i]
+            });
+            result += keyTitle;
+            // Group keys.
+            const keysList = keysLists[i];
+            const colorsList = colorsLists[i];
+            const keys = Object.keys(keysList);
+            for (let y = 0, lengthY = keys.length; y < lengthY; y++) {
+                const color = colorsList ? colorsList[y] : null;
+                let keyParameter = keys[y];
+                const isNonNumberic = nonNumericKeys[keyParameter];
+                if (color) {
+                    keyParameter = colorUtils.createColorMessage({
+                        message: keys[y],
+                        color: color
+                    });
+                }
+                const value = keysList[keys[y]];
+                const displayValue = value && !isNonNumberic && validationUtils.isValidNumber(value) ? textUtils.getNumberWithCommas(value) : value;
+                const message = `${keyParameter === '#' ? '' : `${keyParameter}: `}${displayValue} | `;
+                result += message;
+            }
+            result = textUtils.removeLastCharacters({
+                value: result,
+                charactersCount: 3
+            });
+            results += textUtils.setLogStatusColored(result, statusColor);
+            if (i < (lengthX - 1)) {
+                results += '\n';
+            }
+        }
+        logUpdate(results);
+    } */
+
+
+/* const colorUtils = require('./color.utils');
+const regexUtils = require('./regex.utils'); */
+
+/*
+    getSplitWords(name) {
+        if (!name) {
+            return name;
+        }
+        return name.split(regexUtils.splitWords);
+    }
+
+    replaceNoneAlphabets(name, character) {
+        if (!name) {
+            return name;
+        }
+        return name.replace(regexUtils.clearNoneAlphabets, character);
+    }
+
+    calculatePercentageDisplay(data) {
+        const { partialValue, totalValue } = data;
+        if (!validationUtils.isValidNumber(partialValue) || !validationUtils.isValidNumber(totalValue)) {
+            return '';
+        }
+        return `${this.addLeadingZero(((100 * partialValue) / totalValue).toFixed(2))}%`;
+    }
+
+    removeLastCharacters(data) {
+        const { value, charactersCount } = data;
+        if (!value || !validationUtils.isValidNumber(charactersCount)) {
+            return '';
+        }
+        return value.substring(0, value.length - charactersCount);
+    }
+
+    setLogStatusColored(status, color) {
+        if (!status || !color) {
+            return '';
+        }
+        const delimiter = colorUtils.createColorMessage({
+            message: this.b,
+            color: color
+        });
+        return `${delimiter}${status}${delimiter}`;
+    }
+
+    // This method converts a given number to display comma number.
+    getNumberWithCommas(number) {
+        if (number <= -1 || !validationUtils.isValidNumber(number)) {
+            return '';
+        }
+        return number.toString().replace(regexUtils.numberCommasRegex, ',');
+    }
+
+    getSplitNumber(text) {
+        if (!text) {
+            return -1;
+        }
+        return Number(text.split('_')[0]);
+    }
+
+    getPositiveNumber(number) {
+        if (!validationUtils.isValidNumber(number)) {
+            return -1;
+        }
+        return Math.abs(number);
+    }
+
+    getFloorPositiveNumber(number) {
+        return this.addLeadingZero(this.getFloorNumber(number));
+    }
+
+    getFloorNumber(number) {
+        if (!validationUtils.isValidNumber(number)) {
+            return -1;
+        }
+        return Math.floor(number);
+    }
+
+    getNumberOfNumber(data) {
+        const { number1, number2 } = data;
+        if (!validationUtils.isValidNumber(number1) || !validationUtils.isValidNumber(number2)) {
+            return '';
+        }
+        return `${this.getNumberWithCommas(number1)}/${this.getNumberWithCommas(number2)}`;
+    }
+
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
+*/
+
+
+/*
+const validationUtils = require('./validation.utils'); */
+
+
+/*
+
+
+    getDifferenceTimeBetweenDates(data) {
+        const { startDateTime, endDateTime } = data;
+        if (!validationUtils.isValidDate(startDateTime) || !validationUtils.isValidDate(endDateTime)) {
+            return null;
+        }
+        // Get the total time.
+        const totalTime = textUtils.getPositiveNumber(endDateTime - startDateTime);
+        // Get total seconds between the times.
+        let delta = totalTime / 1000;
+        // Calculate (and subtract) whole days.
+        const days = textUtils.getFloorPositiveNumber(delta / 86400);
+        delta -= days * 86400;
+        // Calculate (and subtract) whole hours.
+        const hours = textUtils.getFloorPositiveNumber((delta / 3600) % 24);
+        delta -= hours * 3600;
+        // Calculate (and subtract) whole minutes.
+        const minutes = textUtils.getFloorPositiveNumber((delta / 60) % 60);
+        delta -= minutes * 60;
+        // What's left is seconds.
+        // In theory the modulus is not required.
+        const seconds = textUtils.getFloorPositiveNumber(delta % 60);
+        return `${days}.${hours}:${minutes}:${seconds}`;
+    } */
+
+
+
+/*
+
+    getFileName(filePath) {
+        return path.parse(filePath).name;
+    }
+
+    getFullFileName(filePath) {
+        return path.parse(filePath).base;
+    }
+
+    getDirectoryName(directoryPath) {
+        return directoryPath.split('\\').pop();
+    }
+
+    getExtname(filePath) {
+        return path.extname(filePath).slice(1);
+    } */
+
+
+/*
+
+    // This method validates if a given variable is a valid boolean and returns the result.
+    isValidBoolean(boolean) {
+        return typeof boolean == typeof true;
+    }
+
+    isValidDate(dateTime) {
+        return dateTime instanceof Date;
+    } */
+
+    /*     async read(targetPath) {
+        return await fs.readFile(targetPath, 'utf-8');
+    }
+
+    getAllDirectories(targetPath) {
+        return fs.readdirSync(targetPath, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
+    }
+
+    getItemName(targetPath) {
+        const stats = fs.statSync(targetPath);
+        let itemName, itemFullName, itemDirectoryPath = null;
+        if (stats.isDirectory()) {
+            itemName = pathUtils.getDirectoryName(targetPath);
+            itemFullName = itemName;
+            itemDirectoryPath = targetPath;
+        }
+        else {
+            itemName = pathUtils.getFileName(targetPath);
+            itemFullName = pathUtils.getBasename(targetPath);
+            itemDirectoryPath = pathUtils.getDirectoryPath(targetPath);
+        }
+        return {
+            itemName: itemName,
+            itemFullName: itemFullName,
+            itemDirectoryPath: itemDirectoryPath
+        };
+    }
+
+    getFileType(targetPath) {
+        if (!targetPath) {
+            throw new Error(`targetPath not found: ${targetPath} (1000018)`);
+        }
+        return pathUtils.getExtname(targetPath);
+    }
+
+    createStream(targetPath) {
+        if (!targetPath) {
+            throw new Error(`targetPath not found: ${targetPath} (1000019)`);
+        }
+        return fs.createReadStream(targetPath, { encoding: 'utf8' });
+    }
+
+    createWriteStream(targetPath) {
+        return fs.createWriteStream(targetPath, { encoding: 'utf8' });
+    } */
