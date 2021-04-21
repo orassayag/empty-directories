@@ -1,7 +1,7 @@
 {
   "name": "empty-directories",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "A simple Node.js application to scan and log all the empty directories from a given pathand log them into a TXT file.",
   "keywords": [
     "scan",

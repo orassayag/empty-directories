@@ -62,18 +62,19 @@ class TextUtils {
         return `${text}\r\n`;
     }
 
-    removeLastCharacter(text) {
-        if (!text) {
-            return '';
-        }
-        return text.substring(0, text.length - 1);
-    }
-
     lowerCaseList(list) {
         if (!validationUtils.isExists(list)) {
             return list;
         }
         return list.map(i => this.toLowerCase(i));
+    }
+
+    removeLastCharacters(data) {
+        const { value, charactersCount } = data;
+        if (!value || !validationUtils.isValidNumber(charactersCount)) {
+            return '';
+        }
+        return value.substring(0, value.length - charactersCount);
     }
 }
 

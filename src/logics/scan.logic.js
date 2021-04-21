@@ -3,7 +3,7 @@ const { Status } = require('../core/enums');
 const { applicationService, confirmationService, countLimitService, logService,
     pathService, scanService } = require('../services');
 const globalUtils = require('../utils/files/global.utils');
-const { logUtils, systemUtils } = require('../utils');
+const { logUtils, systemUtils, timeUtils } = require('../utils');
 
 class ScanLogic {
 
@@ -30,7 +30,7 @@ class ScanLogic {
     async startSession() {
         // Initiate.
         this.updateStatus('SCAN DIRECTORIES', Status.SCAN);
-        applicationService.applicationData.startDateTime = new Date();
+        applicationService.applicationData.startDateTime = timeUtils.getCurrentDate();
         await scanService.run();
         await this.exit(Status.FINISH);
     }
