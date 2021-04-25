@@ -15,7 +15,7 @@ class ScanService {
 
     async run() {
         const pathsList = await fileUtils.getFilesRecursive({
-            directory: pathService.pathData.scanPath,
+            directory: pathService.pathDataModel.scanPath,
             ignorePaths: this.ignorePaths,
             logProgress: logService.logProgress
         });

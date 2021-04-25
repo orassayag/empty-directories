@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": false,
   "description": "A simple Node.js application to scan and log all the empty directories from a given pathand log them into a TXT file.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orassayag/empty-directories.git"
+  },
   "keywords": [
     "scan",
     "paths",
@@ -45,7 +49,7 @@
   ],
   "dependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "fs-extra": "^9.1.0"
   }
 }

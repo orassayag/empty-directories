@@ -1,5 +1,5 @@
-const textUtils = require('./text.utils');
 const globalUtils = require('./global.utils');
+const textUtils = require('./text.utils');
 
 class LogUtils {
 

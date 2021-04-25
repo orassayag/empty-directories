@@ -1,5 +1,5 @@
 const settings = require('../settings/settings');
-const { Status } = require('../core/enums');
+const { StatusEnum } = require('../core/enums');
 const { applicationService, confirmationService, countLimitService, logService,
     pathService, scanService } = require('../services');
 const globalUtils = require('../utils/files/global.utils');
@@ -19,9 +19,9 @@ class ScanLogic {
     }
 
     async initiate() {
-        this.updateStatus('INITIATE THE SERVICES', Status.INITIATE);
+        this.updateStatus('INITIATE THE SERVICES', StatusEnum.INITIATE);
         countLimitService.initiate(settings);
-        applicationService.initiate(settings, Status.INITIATE);
+        applicationService.initiate(settings, StatusEnum.INITIATE);
         scanService.initiate();
         pathService.initiate(settings);
         await logService.initiate(settings);
@@ -29,33 +29,33 @@ class ScanLogic {
 
     async startSession() {
         // Initiate.
-        this.updateStatus('SCAN DIRECTORIES', Status.SCAN);
-        applicationService.applicationData.startDateTime = timeUtils.getCurrentDate();
+        this.updateStatus('SCAN DIRECTORIES', StatusEnum.SCAN);
+        applicationService.applicationDataModel.startDateTime = timeUtils.getCurrentDate();
         await scanService.run();
-        await this.exit(Status.FINISH);
+        await this.exit(StatusEnum.FINISH);
     }
 
     async sleep() {
-        await globalUtils.sleep(countLimitService.countLimitData.millisecondsEndDelayCount);
+        await globalUtils.sleep(countLimitService.countLimitDataModel.millisecondsEndDelayCount);
     }
 
     // Let the user confirm all the IMPORTANT settings before the process starts.
     async confirm() {
         if (!await confirmationService.confirm(settings)) {
-            await this.exit(Status.ABORT_BY_THE_USER);
+            await this.exit(StatusEnum.ABORT_BY_THE_USER);
         }
     }
 
     updateStatus(text, status) {
         logUtils.logStatus(text);
-        if (applicationService.applicationData) {
-            applicationService.applicationData.status = status;
+        if (applicationService.applicationDataModel) {
+            applicationService.applicationDataModel.status = status;
         }
     }
 
     async exit(status) {
-        if (applicationService.applicationData) {
-            applicationService.applicationData.status = status;
+        if (applicationService.applicationDataModel) {
+            applicationService.applicationDataModel.status = status;
             await this.sleep();
         }
         logUtils.logSpace();

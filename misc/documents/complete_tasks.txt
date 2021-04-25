@@ -1,6 +1,24 @@
 Complete / canceled tasks:
 ==========================
 -Update packages + Recreate package-lock.json. *
+-Change 'misc/backups' to 'misc/backup' - Canceled. *
+-Convert in all places from all versions of canceled keyword to 'Canceled' keyword. *
+-Add in all places 'name.model' to all models. *
+-Check that in all places the name of the file includes the name of tha parent directory. For example: name.model inside 'models' directory. *
+-Don't forget to do the same rename logic for all the enums in the project. *
+-Change in all places the config from 'misc/backup' to 'misc/backups' directory. *
+-Change all (where it's possible) from 'console.log' to 'logUtils.log'. *
+-Take the latest settings from '.vscode/settings.json' and implement them. *
+-Change in all places that globalUtils will be on top. *
+-All time logic is in place + Take the 'getCurrentDate' function from the 'event-dates-calendar' project. *
+-Replace the 'getCurrentDate' method with the updated one from the 'udemy-courses' project. *
+-Copy the '.eslintignore' file from the 'udemy-courses' project. *
+-Add to the 'package.json' file (below the 'description' field) the 'repository' field: *
+"repository": { *
+  "type": "git", *
+  "url": "git://github.com/username/repository.git" *
+} *
+-Update packages + Recreate package-lock.json. *
 -Clear unused enums and make sure all in used really exists. *
 -Remove the 'destination' parameter in the 'filterDirectories' method + Verify that backup still works. *
 -Rename and check: countLimitService.countLimitData.millisecondsSendEmailDelayCount. *
@@ -15,7 +33,7 @@ Complete / canceled tasks:
 -Make sure that all places 'this.exit' function - Need to be 'await this.exit'. *
 -Search for 'async ' and create a list of functions/methods, and make sure that all calls have await. *
 -Scan all files for spell mistakes with the 'files-spell-checker' project. *
--In both the 'package.json' and 'package-lock.json' files change to 'private: false'. *
+-In the 'package.json' file change to 'private: false'.
 -Make sure all switch-case have curly braces. *
 -Remove code comments to a backup TXT file. *
 -Remove the duplicate empty lines: \n\s*\n\s*\n *

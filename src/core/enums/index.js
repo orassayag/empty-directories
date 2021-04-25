@@ -1,3 +1,3 @@
-const { ScriptType, Status } = require('./files/system.enum');
+const { ScriptTypeEnum, StatusEnum } = require('./files/system.enum');
 
-module.exports = { ScriptType, Status };
+module.exports = { ScriptTypeEnum, StatusEnum };

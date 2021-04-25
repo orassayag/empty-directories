@@ -3,8 +3,8 @@ const { pathUtils } = require('../utils');
 const settings = {
     // ===GENERAL=== //
     // Determine the absolute path to scan the files (and directories in case of NAME
-    // method) in order to scan them. For example: C:\\Or\\Web\\PuppeteerExample
-    SCAN_PATH: 'C:\\',
+    // method) in order to scan them. For example: C:\\Or\\Web\\puppeteer-example
+    SCAN_PATH: 'C:\\Or\\Web',
 
     // ===LOG=== //
     // Determine the name of the resulting new TXT file in the 'dist' directory.

@@ -1,4 +1,4 @@
-const { LogData } = require('../../core/models');
+const { LogDataModel } = require('../../core/models');
 const pathService = require('./path.service');
 const { fileUtils, textUtils, logUtils } = require('../../utils');
 
@@ -6,22 +6,22 @@ class LogService {
 
 	constructor() {
 		// ===PATH=== //
-		this.logData = null;
+		this.logDataModel = null;
 		this.baseSessionPath = null;
 		this.distFileName = null;
 	}
 
 	async initiate(settings) {
-		this.logData = new LogData(settings);
+		this.logDataModel = new LogDataModel(settings);
 		await this.initiateDirectories();
 	}
 
 	async initiateDirectories() {
 		// ===PATH=== //
-		this.baseSessionPath = pathService.pathData.distPath;
+		this.baseSessionPath = pathService.pathDataModel.distPath;
 		fileUtils.createDirectory(this.baseSessionPath);
 		await fileUtils.emptyDirectory(this.baseSessionPath);
-		this.distFileName = `${this.baseSessionPath}\\${this.logData.distFileName}.txt`;
+		this.distFileName = `${this.baseSessionPath}\\${this.logDataModel.distFileName}.txt`;
 	}
 
 	async logProgress(path) {
