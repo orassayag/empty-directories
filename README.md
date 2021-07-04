@@ -7,15 +7,15 @@ Built in April 2021. A simple Node.js application to scan and log all the empty 
 Clone the application to your computer.
 Steps to view the solution:
 1. Open server application on IDE (I use VSCode).
-2. In the terminal: 'npm i'.
-3. In the terminal: 'npm start'.
+2. In the terminal run: 'npm i'.
+3. In the terminal run: 'npm start'.
 
 READ THE FOLLOWING SETTINGS BEFORE YOU BEGIN:
 
 -Instructions & How to use:
-In the terminal: 'npm start'.
+In the terminal run: 'npm start'.
 
-Happy testing! :)
+Happy testing! :).
 
 ### Prerequisites
 
