@@ -1,58 +1,47 @@
 {
   "name": "empty-directories",
   "version": "1.0.0",
-  "private": false,
-  "description": "A simple Node.js application to scan and log all the empty directories from a given pathand log them into a TXT file.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/orassayag/empty-directories.git"
+  "description": "A Node.js utility application to scan and identify all empty directories from a given path and log them into a TXT file",
+  "main": "src/scripts/scan.script.js",
+  "scripts": {
+    "start": "node src/scripts/scan.script.js",
+    "backup": "node src/scripts/backup.script.js",
+    "lint": "eslint src/**/*.js",
+    "test": "node src/tests/sandbox.test.js"
   },
   "keywords": [
-    "scan",
-    "paths",
-    "files",
-    "directories"
+    "empty",
+    "directories",
+    "scanner",
+    "cleanup",
+    "filesystem",
+    "utility",
+    "file-management",
+    "directory-scanner",
+    "empty-folders",
+    "disk-cleanup"
   ],
-  "license": "UNLICENSED",
-  "author": "Or Assayag <orassayag@gmail.com>",
-  "contributors": [
-    {
-      "name": "Or Assayag",
-      "email": "orassayag@gmail.com",
-      "url": "https://github.com/orassayag"
-    }
-  ],
-  "main": "src/scripts/scan.script.js",
-  "files": [
-    "src",
-    ".eslintignore",
-    ".eslintrc",
-    ".gitignore",
-    ".jsbeautifyrc",
-    ".npmignore",
-    "INSTRUCTIONS.md",
-    "package-lock.json",
-    "package.json",
-    "README.md"
-  ],
-  "scripts": {
-    "backup": "node src/scripts/backup.script.js",
-    "sand": "node src/tests/sandbox.test.js",
-    "start": "node src/scripts/scan.script.js",
-    "stop": "taskkill -f -im node.exe"
+  "author": {
+    "name": "Or Assayag",
+    "email": "orassayag@gmail.com",
+    "url": "https://github.com/orassayag"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orassayag/empty-directories.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orassayag/empty-directories/issues"
+  },
+  "homepage": "https://github.com/orassayag/empty-directories#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "dependencies": {
-    "fs-extra": "^11.1.1"
+    "fs-extra": "^10.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.21.8",
-    "eslint": "^8.40.0",
-    "@types/node": "^20.1.2"
+    "eslint": "^7.32.0"
   }
 }
