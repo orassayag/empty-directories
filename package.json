@@ -1,14 +1,7 @@
 {
   "name": "empty-directories",
   "version": "1.0.0",
-  "description": "A Node.js utility application to scan and identify all empty directories from a given path and log them into a TXT file",
-  "main": "src/scripts/scan.script.js",
-  "scripts": {
-    "start": "node src/scripts/scan.script.js",
-    "backup": "node src/scripts/backup.script.js",
-    "lint": "eslint src/**/*.js",
-    "test": "node src/tests/sandbox.test.js"
-  },
+  "description": "A Node.js utility application that scans a given path to detect and identify all empty directories, then logs the results into a TXT file for easy review. Designed for file system cleanup and organization, this practical tool helps locate unused folders that contain no files or subdirectories",
   "keywords": [
     "empty",
     "directories",
@@ -21,27 +14,69 @@
     "empty-folders",
     "disk-cleanup"
   ],
+  "homepage": "https://github.com/orassayag/empty-directories#readme",
+  "bugs": {
+    "url": "https://github.com/orassayag/empty-directories/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orassayag/empty-directories.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/orassayag"
+  },
+  "license": "MIT",
   "author": {
     "name": "Or Assayag",
     "email": "orassayag@gmail.com",
     "url": "https://github.com/orassayag"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/orassayag/empty-directories.git"
-  },
-  "bugs": {
-    "url": "https://github.com/orassayag/empty-directories/issues"
-  },
-  "homepage": "https://github.com/orassayag/empty-directories#readme",
-  "engines": {
-    "node": ">=12.0.0"
+  "contributors": [
+    {
+      "name": "Or Assayag",
+      "email": "orassayag@gmail.com",
+      "url": "https://github.com/orassayag"
+    }
+  ],
+  "type": "commonjs",
+  "main": "src/scripts/scan.script.js",
+  "files": [
+    ".github",
+    ".vscode",
+    "dist",
+    "misc",
+    "src",
+    ".eslintignore",
+    ".eslintrc",
+    ".gitignore",
+    ".jsbeautifyrc",
+    ".npmignore",
+    ".prettierrc",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "INSTRUCTIONS.md",
+    "knip.json",
+    "LICENSE",
+    "package-lock.json",
+    "package.json",
+    "README.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "backup": "node src/scripts/backup.script.js",
+    "lint": "eslint src/**/*.js",
+    "start": "node src/scripts/scan.script.js",
+    "test": "node src/tests/sandbox.test.js"
   },
   "dependencies": {
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }

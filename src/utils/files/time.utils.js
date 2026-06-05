@@ -2,46 +2,51 @@ const textUtils = require('./text.utils');
 const validationUtils = require('./validation.utils');
 
 class TimeUtils {
+  constructor() {}
 
-    constructor() { }
+  getCurrentDate(value) {
+    return value
+      ? validationUtils.isValidArray(value)
+        ? new Date(...value)
+        : new Date(value)
+      : new Date();
+  }
 
-    getCurrentDate(value) {
-        return value ? validationUtils.isValidArray(value) ? new Date(...value) : new Date(value) : new Date();
-    }
+  getFullDateNoSpaces() {
+    const date = this.getCurrentDate();
+    return `${[this.getDay(date), this.getMonth(date), this.getYear(date)].join('')}_${[this.getHours(date), this.getMinutes(date), this.getSeconds(date)].join('')}`;
+  }
 
-    getFullDateNoSpaces() {
-        const date = this.getCurrentDate();
-        return `${[this.getDay(date), this.getMonth(date), this.getYear(date)].join('')}_${[this.getHours(date), this.getMinutes(date), this.getSeconds(date)].join('')}`;
-    }
+  getDateNoSpaces() {
+    const date = this.getCurrentDate();
+    return [this.getDay(date), this.getMonth(date), this.getYear(date)].join(
+      ''
+    );
+  }
 
-    getDateNoSpaces() {
-        const date = this.getCurrentDate();
-        return [this.getDay(date), this.getMonth(date), this.getYear(date)].join('');
-    }
+  getSeconds(date) {
+    return textUtils.addLeadingZero(date.getSeconds());
+  }
 
-    getSeconds(date) {
-        return textUtils.addLeadingZero(date.getSeconds());
-    }
+  getMinutes(date) {
+    return textUtils.addLeadingZero(date.getMinutes());
+  }
 
-    getMinutes(date) {
-        return textUtils.addLeadingZero(date.getMinutes());
-    }
+  getHours(date) {
+    return textUtils.addLeadingZero(date.getHours());
+  }
 
-    getHours(date) {
-        return textUtils.addLeadingZero(date.getHours());
-    }
+  getDay(date) {
+    return textUtils.addLeadingZero(date.getDate());
+  }
 
-    getDay(date) {
-        return textUtils.addLeadingZero(date.getDate());
-    }
+  getMonth(date) {
+    return textUtils.addLeadingZero(date.getMonth() + 1);
+  }
 
-    getMonth(date) {
-        return textUtils.addLeadingZero(date.getMonth() + 1);
-    }
-
-    getYear(date) {
-        return date.getFullYear();
-    }
+  getYear(date) {
+    return date.getFullYear();
+  }
 }
 
 module.exports = new TimeUtils();

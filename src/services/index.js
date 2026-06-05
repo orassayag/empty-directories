@@ -6,6 +6,10 @@ const pathService = require('./files/path.service');
 const scanService = require('./files/scan.service');
 
 module.exports = {
-    applicationService, confirmationService, countLimitService, logService,
-    pathService, scanService
+  applicationService,
+  confirmationService,
+  countLimitService,
+  logService,
+  pathService,
+  scanService,
 };

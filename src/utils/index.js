@@ -7,6 +7,11 @@ const timeUtils = require('./files/time.utils');
 const validationUtils = require('./files/validation.utils');
 
 module.exports = {
-    fileUtils, logUtils, pathUtils, systemUtils, textUtils,
-    timeUtils, validationUtils
+  fileUtils,
+  logUtils,
+  pathUtils,
+  systemUtils,
+  textUtils,
+  timeUtils,
+  validationUtils,
 };

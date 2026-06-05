@@ -9,6 +9,7 @@ Everyone is welcome to contribute to this project. Contributing doesn't just mea
 ### Reporting Issues
 
 If you find a bug or have a feature request:
+
 1. Check if the issue already exists in the [GitHub Issues](https://github.com/orassayag/empty-directories/issues)
 2. If not, create a new issue with:
    - Clear title and description
@@ -31,11 +32,13 @@ If you find a bug or have a feature request:
 ### Code Style Guidelines
 
 This project uses:
+
 - **JavaScript (Node.js)** with ES6+ features
 - **ESLint** for code quality
 - **fs-extra** for enhanced file operations
 
 Before submitting:
+
 ```bash
 # Check for linting errors
 npm run lint
@@ -55,6 +58,7 @@ npm start
 ### Adding New Features
 
 When adding new features:
+
 1. Add service logic in `src/services/`
 2. Create utility functions in `src/utils/` if needed
 3. Update models in `src/core/models/` for data structures
@@ -65,6 +69,7 @@ When adding new features:
 ### Configuration Management
 
 When adding new configuration options:
+
 1. Add the setting to `src/settings/settings.js`
 2. Document the setting with clear comments
 3. Update the confirmation prompt if it's an important setting
@@ -74,9 +79,9 @@ When adding new configuration options:
 
 Please feel free to contact me with any question, comment, pull-request, issue, or any other thing you have in mind.
 
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: https://linkedin.com/in/orassayag
 
 Thank you for contributing! 🙏
